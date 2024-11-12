@@ -6,8 +6,27 @@ import imagem2 from '../../../../assets/images/imagem-2.jpg';
 import imagem3 from '../../../../assets/images/imagem-3.jpg';
 import imagem4 from '../../../../assets/images/imagem-4.jpg';
 import imagem5 from '../../../../assets/images/imagem-5.jpg';
+import { useState, useEffect } from 'react';
 
 export default function Imagens() {
+  const [animationDuration, setAnimationDuration] = useState(200);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setAnimationDuration(20);
+      } else {
+        setAnimationDuration(200);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div id='about'>
       <LandingPrimaryTextCtaSection
@@ -29,7 +48,7 @@ export default function Imagens() {
         withBackground={true}
       />
 
-      <LandingMarquee animationDurationInSeconds={200}>
+      <LandingMarquee animationDurationInSeconds={animationDuration}>
         <div style={{ width: 300, height: 400 }}>
           <LazyLoadImage
             src={imagem1}
