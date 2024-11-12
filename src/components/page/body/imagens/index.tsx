@@ -10,13 +10,25 @@ import { useState, useEffect } from 'react';
 
 export default function Imagens() {
   const [animationDuration, setAnimationDuration] = useState(200);
+  const [imageDimensions, setImageDimensions] = useState({
+    width: 400,
+    height: 400,
+  });
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setAnimationDuration(20);
+        setAnimationDuration(30);
+        setImageDimensions({
+          width: 400 - 100,
+          height: 400 - 100,
+        });
       } else {
         setAnimationDuration(200);
+        setImageDimensions({
+          width: 400,
+          height: 400,
+        });
       }
     };
 
@@ -28,11 +40,11 @@ export default function Imagens() {
   }, []);
 
   return (
-    <div id='about'>
+    <div className='w-full'>
       <LandingPrimaryTextCtaSection
         titleComponent={
           <>
-            <h2 className="text-4xl font-semibold leading-tight lg:whitespace-nowrap mb-5 mt-10">
+            <h2 className="text-4xl font-semibold leading-tight lg:whitespace-nowrap mb-5 mt-10" id='about'>
               Transformando espaços com segurança e durabilidade
             </h2>
           </>
@@ -48,16 +60,11 @@ export default function Imagens() {
         withBackground={true}
       />
 
-      <LandingMarquee animationDurationInSeconds={animationDuration}>
-        <div style={{ width: 300, height: 400 }}>
-          <LazyLoadImage
-            src={imagem1}
-            alt="Screenshot of the product"
-            className="w-full h-full object-cover mx-4"
-          />
-        </div>
-
-        <div style={{ width: 400, height: 400 }}>
+      <LandingMarquee 
+        animationDurationInSeconds={animationDuration} 
+        className="w-full"
+      >
+        <div style={{ width: imageDimensions.width, height: imageDimensions.height }}>
           <LazyLoadImage
             src={imagem2}
             alt="Screenshot of the product"
@@ -65,23 +72,7 @@ export default function Imagens() {
           />
         </div>
 
-        <div style={{ width: 400, height: 400 }}>
-          <LazyLoadImage
-            src={imagem3}
-            alt="Screenshot of the product"
-            className="w-full h-full object-cover mx-4"
-          />
-        </div>
-
-        <div style={{ width: 500, height: 400 }}>
-          <LazyLoadImage
-            src={imagem4}
-            alt="Screenshot of the product"
-            className="w-full h-full object-cover mx-4"
-          />
-        </div>
-
-        <div style={{ width: 500, height: 400 }}>
+        <div style={{ width: imageDimensions.width + 100, height: imageDimensions.height }}>
           <LazyLoadImage
             src={imagem5}
             alt="Screenshot of the product"
@@ -89,6 +80,29 @@ export default function Imagens() {
           />
         </div>
 
+        <div style={{ width: imageDimensions.width, height: imageDimensions.height }}>
+          <LazyLoadImage
+            src={imagem3}
+            alt="Screenshot of the product"
+            className="w-full h-full object-cover mx-4"
+          />
+        </div>
+
+        <div style={{ width: imageDimensions.width + 100, height: imageDimensions.height }}>
+          <LazyLoadImage
+            src={imagem4}
+            alt="Screenshot of the product"
+            className="w-full h-full object-cover mx-4"
+          />
+        </div>
+
+        <div style={{ width: imageDimensions.width - 100, height: imageDimensions.height }}>
+          <LazyLoadImage
+            src={imagem1}
+            alt="Screenshot of the product"
+            className="w-full h-full object-cover mx-4"
+          />
+        </div>
       </LandingMarquee>
     </div>
   );
