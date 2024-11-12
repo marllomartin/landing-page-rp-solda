@@ -1,6 +1,11 @@
 import { LandingMarquee } from '@/components/landing/LandingMarquee';
 import { LandingPrimaryTextCtaSection } from '@/components/landing/cta/LandingPrimaryCta';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import imagem1 from '../../../../assets/images/imagem-1.jpg';
+import imagem2 from '../../../../assets/images/imagem-2.jpg';
+import imagem3 from '../../../../assets/images/imagem-3.jpg';
+import imagem4 from '../../../../assets/images/imagem-4.jpg';
+import imagem5 from '../../../../assets/images/imagem-5.jpg';
 
 export default function Imagens() {
   return (
@@ -27,7 +32,7 @@ export default function Imagens() {
       <LandingMarquee animationDurationInSeconds={200}>
         <div style={{ width: 300, height: 400 }}>
           <LazyLoadImage
-            src="/src/assets/images/imagem-1.jpg"
+            src={imagem1}
             alt="Screenshot of the product"
             className="w-full h-full object-cover mx-4"
           />
@@ -35,7 +40,7 @@ export default function Imagens() {
 
         <div style={{ width: 400, height: 400 }}>
           <LazyLoadImage
-            src="/src/assets/images/imagem-2.jpg"
+            src={imagem2}
             alt="Screenshot of the product"
             className="w-full h-full object-cover mx-4"
           />
@@ -43,7 +48,7 @@ export default function Imagens() {
 
         <div style={{ width: 400, height: 400 }}>
           <LazyLoadImage
-            src="/src/assets/images/imagem-3.jpg"
+            src={imagem3}
             alt="Screenshot of the product"
             className="w-full h-full object-cover mx-4"
           />
@@ -51,7 +56,7 @@ export default function Imagens() {
 
         <div style={{ width: 500, height: 400 }}>
           <LazyLoadImage
-            src="/src/assets/images/imagem-4.jpg"
+            src={imagem4}
             alt="Screenshot of the product"
             className="w-full h-full object-cover mx-4"
           />
@@ -59,7 +64,7 @@ export default function Imagens() {
 
         <div style={{ width: 500, height: 400 }}>
           <LazyLoadImage
-            src="/src/assets/images/imagem-5.jpg"
+            src={imagem5}
             alt="Screenshot of the product"
             className="w-full h-full object-cover mx-4"
           />

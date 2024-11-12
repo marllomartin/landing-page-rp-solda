@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import logo from '../../../assets/logo/rp-solda.svg'
 
 const Header: React.FC = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -17,7 +18,7 @@ const Header: React.FC = () => {
     <header className="w-full flex items-center justify-between px-4 py-4 bg-gray-100 shadow-md fixed top-0 left-0 z-50">
       <div className="flex items-center" style={{ width: 65, height: 65 }}>
         <LazyLoadImage
-          src="/src/assets/logo/rp-solda.svg"
+          src={logo}
           alt="Logo"
           className="w-full h-full object-cover mx-4"
         />

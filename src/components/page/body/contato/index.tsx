@@ -2,7 +2,7 @@ import { LandingProductFeature } from '@/components/landing/LandingProductFeatur
 import { LandingProductFeatureKeyPoints } from '@/components/landing/LandingProductFeatureKeyPoints';
 import { FaInstagram } from "react-icons/fa";
 import { MdPhone } from "react-icons/md";
-
+import imagem6 from '../../../../assets/images/imagem-6.jpg';
 
 export default function Contact() {
 
@@ -51,7 +51,7 @@ export default function Contact() {
             </div>
           </>
         }
-        imageSrc="/src/assets/images/imagem-6.jpg"
+        imageSrc={imagem6}
         imageAlt="Contato"
         imagePosition="left"
         imagePerspective="none"
