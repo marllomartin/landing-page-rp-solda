@@ -40,11 +40,11 @@ export default function Imagens() {
   }, []);
 
   return (
-    <div className='w-full'>
+    <div className='w-full' id='about'>
       <LandingPrimaryTextCtaSection
         titleComponent={
           <>
-            <h2 className="text-4xl font-semibold leading-tight lg:whitespace-nowrap mb-5 mt-10" id='about'>
+            <h2 className="text-4xl font-semibold leading-tight lg:whitespace-nowrap mb-5 mt-10">
               Transformando espaços com segurança e durabilidade
             </h2>
           </>
