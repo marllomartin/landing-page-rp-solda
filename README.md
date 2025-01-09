@@ -11,3 +11,4 @@ The project includes a responsive and visually appealing design, optimized for u
 * [TypeScript](https://www.typescriptlang.org/)
 * [React](https://reactjs.org/)
   * [Tailwind CSS](https://tailwindcss.com/)
+* [Vite](https://vite.dev/)
